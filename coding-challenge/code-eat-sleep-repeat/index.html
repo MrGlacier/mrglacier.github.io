@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <title>Code - Eat - Sleep - Repeat</title>
+        
+        <style>
+            .animated {
+                animation-duration: 0.75s;
+                animation-fill-mode: both;
+            }
+            .fadeIn {
+                animation-name: fadeIn;
+            }
+            .fadeOut {
+                animation-name: fadeOut;
+            }
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1
+                }
+            }
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opdacity: 0
+                }
+            }
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // words to display
+                let words = ['Code', 'Eat', 'Sleep', 'Repeat'];
+
+                // create the stage
+                let stageDiv = document.createElement('div');
+                stageDiv.style.height = '100vh';
+                stageDiv.style.display = 'flex';
+                stageDiv.style.alignItems = 'center';
+                stageDiv.style.justifyContent = 'center';
+
+                // the text to display
+                let textToDisplay = document.createElement('h1');
+                textToDisplay.innerText = words[0];
+                textToDisplay.style.font = 'Times New Roman';
+                textToDisplay.style.fontSize = '10em';
+                textToDisplay.classList.add('fadeIn', 'animated');
+
+                // append text to stage
+                stageDiv.appendChild(textToDisplay);
+
+                // insert stageDiv after first body tag
+                let firstChildOfBody = document.body.firstChild;
+                firstChildOfBody.parentNode.insertBefore(stageDiv, firstChildOfBody);
+
+                // listen for the animation end
+                textToDisplay.addEventListener('animationend', () => {
+                    changeTextAndFade();
+                })
+
+                let wordIndex = 1;
+
+                function changeTextAndFade() {
+                    // word index to big? reset
+                    if (wordIndex >= words.length) {
+                        wordIndex = 0;
+                    }
+
+                    // change text / css class
+                    if (textToDisplay.classList.contains('fadeIn')) {
+                        textToDisplay.classList.replace('fadeIn', 'fadeOut');
+                    } else {
+                        textToDisplay.innerText = words[wordIndex];
+                        textToDisplay.classList.replace('fadeOut', 'fadeIn');
+                        ++wordIndex
+                    }
+                }
+            })
+        </script>
+    </head>
+    <body>
+	</body>
+</html>
