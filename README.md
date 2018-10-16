@@ -1,8 +1,10 @@
 # mrglacier.github.io
-My GitHub Page
+## My GitHub Page
 
-## Coding Challenge
-* [10 Print in Javasscript](https://www.google.com)
-* [10 Print as Canvas](https://www.google.com)
-* [Code Eat Sleep Repeat](https://www.google.com)
-* [Crusial Point](https://www.google.com)
+## Coding Challenge so far
+* 10 Print in Javasscript
+* 10 Print as Canvas
+* Code Eat Sleep Repeat
+* Crusial Point
+
+## See [https://mrglacier.github.io](https://mrglacier.github.com)
